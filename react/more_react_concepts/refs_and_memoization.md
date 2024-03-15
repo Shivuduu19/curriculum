@@ -186,7 +186,7 @@ You will likely want to have a separate button component where you can handle st
 
 We can see that the click handler is defined in the `Counter` component, and we've passed it to the `onClick` prop of the `ButtonComponent`.
 
-We know that a component renders whenever either state changes or prop changes. Anything inside that is not controlled by React is destroyed and re-executed. Functions, variables, etc. As a result, the function `handleClick` is re-created each time, and the prop `onClick` of the `ButtonComponent` also changes. Alright, so how can `useMemo` help in here?
+We know that a component renders whenever either state changes or prop which is in state changes. Anything inside that is not controlled by React is destroyed and re-executed. Functions, variables, etc. As a result, the function `handleClick` is re-created each time, and the prop `onClick` of the `ButtonComponent` also changes. Alright, so how can `useMemo` help in here?
 
 We already know we can memoize a value using `useMemo`, right? Then we can just cache the function reference and use an empty dependency array so that it won't change.
 
